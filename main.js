@@ -57,7 +57,7 @@ document.body.onscroll = moveCamera;
 moveCamera();
 
 function animate() {
-  setTimeout(function() {requestAnimationFrame(animate)}, 1000/12);
+  setTimeout(function() {requestAnimationFrame(animate)}, 125);
   torus.rotation.x += 0.001;
   torus.rotation.y += 0.0005;
   torus.rotation.z += 0.001;
