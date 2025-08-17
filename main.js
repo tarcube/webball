@@ -48,8 +48,8 @@ const tuna = [];
 for (let i = 1; i <= 1325; i++) {tuna.push(new THREE.TextureLoader().load(`./images/${i}.webp`))}
 function moveCamera() {
   const frame = document.body.getBoundingClientRect().top;
-  scene.background = tuna[parseInt(-frame/4+24)];
-  console.log(parseInt(-frame/4+24));
+  scene.background = tuna[parseInt(-frame/10+10)];
+  //console.log(parseInt(-frame/10+10));
   camera.position.x = frame * -0.0002;
   camera.position.y = frame * -0.0002;
   camera.position.z = frame * -0.01;}
@@ -57,7 +57,7 @@ document.body.onscroll = moveCamera;
 moveCamera();
 
 function animate() {
-  requestAnimationFrame(animate);
+  setTimeout(function() {requestAnimationFrame(animate)}, 1000/30);
   torus.rotation.x += 0.001;
   torus.rotation.y += 0.0005;
   torus.rotation.z += 0.001;
